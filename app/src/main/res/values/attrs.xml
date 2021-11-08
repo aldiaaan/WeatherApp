@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeatherStat">
+        <attr name="stat_icon" format="reference"/>
+        <attr name="stat_label" format="string"/>
+        <attr name="stat_value" format="string"/>
+        <attr name="stat_min_temp" format="string"/>
+    </declare-styleable>
+</resources>

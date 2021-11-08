@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.forecastdetail.ForecastDetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.aldianasmara.weatherappaldian.ui.home.widgets.HomeBanner
+                android:id="@+id/forecast_detail_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <com.aldianasmara.weatherappaldian.ui.home.widgets.WeatherStat
+                        android:id="@+id/ws_precipitation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:stat_icon="@drawable/ic_water_percent"
+                        app:stat_label="Precipitation" />
+
+                    <com.aldianasmara.weatherappaldian.ui.home.widgets.WeatherStat
+                        android:id="@+id/ws_wind_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:stat_icon="@drawable/ic_windy"
+                        app:stat_label="Wind Speed"
+                        app:stat_value="69" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <com.aldianasmara.weatherappaldian.ui.home.widgets.WeatherStat
+                        android:id="@+id/ws_min_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:stat_icon="@drawable/ic_thermometer"
+                        app:stat_label="Min Temperature" />
+
+                    <com.aldianasmara.weatherappaldian.ui.home.widgets.WeatherStat
+                        android:id="@+id/ws_max_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:stat_icon="@drawable/ic_thermometer"
+                        app:stat_label="Max Temperature"
+                        app:stat_value="69" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+
+                android:text="Hourly Forecast"
+                android:textColor="@color/text_primary"
+                android:textSize="17dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_forecast_detail_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

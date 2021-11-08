@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.aldianasmara.weatherappaldian.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_forecastScreenFragment"
+            app:destination="@id/forecastScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastScreenFragment"
+        android:name="com.aldianasmara.weatherappaldian.ui.forecast.ForecastScreenFragment"
+        android:label="{location} Forecast"
+        tools:layout="@layout/fragment_forecast_screen">
+
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_forecastScreenFragment_to_forecastDetailFragment"
+            app:destination="@id/forecastDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastDetailFragment"
+        android:name="com.aldianasmara.weatherappaldian.ui.forecastdetail.ForecastDetailFragment"
+        android:label="{location} {date}"
+        tools:layout="@layout/fragment_forecast_detail">
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="index"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
